@@ -48,7 +48,11 @@ const folders = [
 const App = () => {
   const [showClock, setShowClock] = useState(true);
 
-  const toggleClock = (showClock) => {
+  // handleEvent = (e) => {
+
+  // }
+
+  const toggleClock = () => {
     setShowClock(!showClock);
   }
 
@@ -56,7 +60,7 @@ const App = () => {
     <div className="widgets">
       <Folder folders={folders} />
       <Weather />
-      <ClockToggle onClick={toggleClock} />
+      <ClockToggle toggleClock={toggleClock} />
       {showClock && 
         <Clock />}
       <Autocomplete names={names} />
