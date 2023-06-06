@@ -48,10 +48,6 @@ const folders = [
 const App = () => {
   const [showClock, setShowClock] = useState(true);
 
-  // handleEvent = (e) => {
-
-  // }
-
   const toggleClock = () => {
     setShowClock(!showClock);
   }

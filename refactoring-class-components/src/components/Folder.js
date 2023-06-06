@@ -67,10 +67,7 @@ const Folder = (props) => {
 
   const [currentTab, setCurrentTab] = useState(0);
 
-
   const titles = props.folders.map(folder => folder.title); 
-
-
 
   return (
     <section className="tabs-section">
