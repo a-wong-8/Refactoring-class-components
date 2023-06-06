@@ -79,7 +79,7 @@ const Weather = () => {
 
   useEffect(()=> {
 
-    pollWeather = async (location) => {
+    const pollWeather = async (location) => {
       let url = 'http://api.openweathermap.org/data/2.5/weather?';
 
       const apiKey = process.env.REACT_APP_WEATHER_API;
@@ -109,6 +109,25 @@ const Weather = () => {
     }
   },[])
 
+    // const weather = this.state.weather;
+    let content = <div className='loading'>loading weather...</div>;
+    
+    if (weather) {
+      const temp = (weather.main.temp - 273.15) * 1.8 + 32;
+      content = (
+        <div>
+          <p>{weather.name}</p>
+          <p>{temp.toFixed(1)} degrees</p>
+        </div>
+      );
+    }
+    else {
+      content = (
+        <div>
+          Weather is currently unavailable. (Are Location Services enabled?) 
+        </div>
+      )
+
   return (
 
     
@@ -119,6 +138,8 @@ const Weather = () => {
     </div>
   </section>
   );
+
+  }
     
 }
 
